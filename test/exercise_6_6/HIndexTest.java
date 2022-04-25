@@ -10,13 +10,13 @@ public class HIndexTest {
 
 	/**
 	 * Testing Strategy: 
-	 * °´ÊäÈëµÄ³¤¶È½øÐÐ»®·Ö£º0,1,2,n(>2) 
-	 * °´Öµ»®·Ö£ºÕýÕûÊý»ò0¡¢¸ºÖµ¡¢Ð¡Êý¡¢°üº¬ÆäËû×Ö·û
-	 * °´ÅÅÐòºóÊýÖµ´óÐ¡£ºµÚ1¸ö<1£¬µÚ2¸ö<2£¬µÚn¸ö<n 
-	 * °´Ïà¶ÔÖµ´óÐ¡£ºÊý×Ö¶¼Ò»Ñù¡¢Ò»¸ö´óÆäËû¶¼Ð¡¡¢Ò»¸öÐ¡ÆäËû¶¼´ó
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½È½ï¿½ï¿½Ð»ï¿½ï¿½Ö£ï¿½0,1,2,n(>2) 
+	 * ï¿½ï¿½Öµï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½<1ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½<2ï¿½ï¿½ï¿½ï¿½nï¿½ï¿½<n 
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ò»ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
-	 * °´¡°µÑ¿¨¶û»ýÈ«¸²¸Ç¡±²ßÂÔÉè¼Æ²âÊÔÓÃÀý
-	 * »ò°´¡°Ã¿¸öÈ¡ÖµÖÁÉÙ¸²¸ÇÒ»´Î¡±²ßÂÔ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Ç¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½ò°´¡ï¿½Ã¿ï¿½ï¿½È¡Öµï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½Ò»ï¿½Î¡ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 
 	@Test
@@ -40,7 +40,7 @@ public class HIndexTest {
 	@Rule
 	public ExpectedException expectedEx = ExpectedException.none();
 
-	// covers ÊäÈë³¤¶È=0
+	// covers ï¿½ï¿½ï¿½ë³¤ï¿½ï¿½=0
 	//@Test(expected = IllegalArgumentException.class)
 	@Test
 	public void testEmptyInput() throws IllegalArgumentException {
@@ -49,14 +49,14 @@ public class HIndexTest {
 		HIndex.calcHIndex("");
 	}
 
-	// covers ÊäÈë³¤¶È=1£¬ÕýÕûÊý/0
+	// covers ï¿½ï¿½ï¿½ë³¤ï¿½ï¿½=1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/0
 	@Test
 	public void testOneInput() {
 		assertEquals(0, HIndex.calcHIndex("0"));
 		assertEquals(1, HIndex.calcHIndex("10"));
 	}
 
-	// covers ÊäÈë³¤¶È=2£¬ÕýÕûÊý/0
+	// covers ï¿½ï¿½ï¿½ë³¤ï¿½ï¿½=2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/0
 	@Test
 	public void testTwoInput() {
 		assertEquals(0, HIndex.calcHIndex("0,0"));
@@ -64,7 +64,7 @@ public class HIndexTest {
 		assertEquals(2, HIndex.calcHIndex("2,4"));
 	}
 
-	// covers ÊäÈë³¤¶È>2£¬ÕýÕûÊý/0
+	// covers ï¿½ï¿½ï¿½ë³¤ï¿½ï¿½>2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/0
 	@Test
 	public void testMultipleInput() {
 		assertEquals(0, HIndex.calcHIndex("0,0,0"));
@@ -73,13 +73,13 @@ public class HIndexTest {
 		assertEquals(3, HIndex.calcHIndex("3,4,4"));
 	}
 
-	// covers ÊäÈë°üº¬¸ºÖµ
+	// covers ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 	@Test(expected = IllegalArgumentException.class)
 	public void testNegativeInput() throws IllegalArgumentException {
 		HIndex.calcHIndex("0,-2,0");
 	}
 
-	// covers ÊäÈë°üº¬Ð¡Êý
+	// covers ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½
 	//@Test(expected = IllegalArgumentException.class)
 	@Test
 	public void testNumberWithDigitalInput() throws IllegalArgumentException {
@@ -88,7 +88,7 @@ public class HIndexTest {
 		HIndex.calcHIndex("1,2.3,0");
 	}
 
-	// covers ÊäÈë°üº¬ÆäËû×Ö·û
+	// covers ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½
 	//@Test(expected = IllegalArgumentException.class)
 	@Test
 	public void testIllegalCharacterInput() throws IllegalArgumentException {
